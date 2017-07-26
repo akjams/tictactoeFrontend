@@ -3,12 +3,11 @@ import { Injectable } from '@angular/core';
 import { Game } from './game';
 
 const ALL_GAMES: Game[] = [
-  { state: 'xo------0'},
-  { state: 'xo------1'},
-  { state: 'xo------2'},
-  { state: 'xo------3'},
-  { state: 'xo------4'},
-  { state: 'xo------5'},
+  new Game('xo---1', 'katie', 'courtney'),
+  new Game('xo---2', 'katie', 'courtney'),
+  new Game('xo---3', 'katie', 'courtney'),
+  new Game('xo---4', 'katie', 'courtney'),
+  new Game('xo---5', 'katie', 'courtney')
 ];
 
 @Injectable()
@@ -21,5 +20,9 @@ export class GameService {
 
   getGame(id: number): Game {
     return this.games[id];
+  }
+
+  getMyGames() {
+    return this.games.slice(0, 3);
   }
 }
