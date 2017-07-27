@@ -28,6 +28,10 @@ import { MyGamesComponent } from './mygames.component';
       {
         path: 'mygames',
         component: MyGamesComponent
+      },
+      {
+        path: 'playgame/:id',
+        component: PlayGameComponent
       }
     ])
   ],

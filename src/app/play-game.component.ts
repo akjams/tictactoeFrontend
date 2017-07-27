@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Location }                 from '@angular/common';
 
 import { Game } from './game';
 import { GameService } from './game.service';
@@ -17,9 +19,9 @@ export class PlayGameComponent implements OnInit {
   @Input() gameId: number;
   game: Game;
 
-  constructor(private gameService: GameService) {}
+  constructor(private gameService: GameService, private route: ActivatedRoute, private location: Location) {}
 
   ngOnInit(): void {
-    this.game = this.gameService.getGame(this.gameId);
+    this.route.paramMap.subscribe(paramMap => this.game = this.gameService.getGame(+paramMap.get('id')));
   }
 }

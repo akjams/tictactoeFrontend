@@ -7,7 +7,7 @@ import { GameService } from './game.service';
   selector: 'my-games',
   template: `
     hello from my games
-    <div *ngFor="let mygame of mygames"> {{mygame.state}} </div>
+    <div *ngFor="let mygame of mygames"> <a routerLink='/playgame/{{mygame.gameId}}'> {{mygame.state}} </a> </div>
   `
 })
 
