@@ -22,6 +22,6 @@ export class MyGamesComponent {
   
   ngOnInit(): void {
     this.userService.validateAuth();
-    this.mygames = this.gameService.getMyGames();
+    this.gameService.getMyGames().subscribe(games => this.mygames = games);
   }
 }

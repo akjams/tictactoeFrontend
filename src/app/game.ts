@@ -1,12 +1,15 @@
 export class Game {
-  gameId: number;
+  id: number;
   state: string;
-  usernameX: string;
-  usernameY: string;
-  constructor(gameId: number, state: string, userIdX: string, userIdO: string, winnerId: string, isOver: boolean) {
-    this.gameId = gameId;
+  useridX: number;
+  useridO: number;
+  winnerId: number;
+  turnId: number;
+  isOver: boolean;
+  constructor(gameId: number, state: string, userIdX: number, userIdO: number, winnerId: string, isOver: boolean) {
+    this.id = gameId;
     this.state = state;
-    this.usernameX = userIdX;
-    this.usernameY = userIdO;
+    this.useridX = userIdX;
+    this.useridO = userIdO;
   }
 }
